@@ -2,6 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import ContextAlert from '../components/ContextAlert.astro';
 import Markdown from '../components/Markdown.astro';
+import { Hero146 } from "@/components/hero146";
+import { Feature180 } from "@/components/feature180";
+import { Feature182 } from "@/components/feature182";
+import { Feature95 } from "@/components/feature95";
+import { Casestudies2 } from "@/components/casestudies2";
 
 const explainer = `
 An Astro website can go way beyond static pages - on the right platform.
@@ -12,10 +17,9 @@ Any page or data can be rebuilt only when needed, without site visitors ever get
 ---
 
 <Layout title="Welcome to Astro.">
-    <ContextAlert class="mb-8" />
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+    <Hero146 client:load />
+    <Feature95 client:visible />
+    <Feature180 />
+    <Feature182 />  
+    <Casestudies2 />
 </Layout>

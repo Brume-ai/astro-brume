@@ -2,7 +2,8 @@
 import '../../src/styles/globals.css';
 import '@fontsource-variable/inter/wght.css';
 import interWoff2 from '@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url';
-import Header from '../components/Header.astro';
+import { Navbar3 } from "@/components/navbar3";
+import { Footer7 } from "@/components/footer7";
 import Footer from '../components/Footer.astro';
 
 interface Props {
@@ -22,12 +23,12 @@ const { title } = Astro.props;
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="preload" as="font" type="font/woff2" href={interWoff2} crossorigin />
     </head>
-    <body class="antialiased text-white bg-complementary">
-        <div class="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-            <div class="flex flex-col w-full max-w-5xl mx-auto grow">
-                <Header />
+    <body class="antialiased">
+        <Navbar3 client:load />
+        <div class="flex flex-col min-h-screen px-6 sm:px-12">
+            <div class="flex flex-col w-full mx-auto grow">
                 <main class="grow"><slot /></main>
-                <Footer />
+                <Footer7 client:visible  />
             </div>
         </div>
     </body>
