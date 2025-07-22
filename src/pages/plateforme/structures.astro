@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Feature62 } from "@/components/feature62";
+import { Feature86 } from "@/components/feature86";
+import { Feature145 } from "@/components/feature145";
+import { Feature57 } from "@/components/feature57";
+---
+
+<Layout title="Welcome to Astro.">
+    <Feature57 client:load />
+    <Feature145 client:load />
+    <Feature86 client:visible />
+    <Feature62 />
+</Layout>

@@ -19,7 +19,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -34,9 +34,9 @@ import {
 
 const solutions = [
   {
-    title: "First solution",
+    title: "Structures",
     description: "Vestibulum scelerisque quis nisl ut convallis.",
-    href: "#",
+    href: "plateforme/structures",
     icon: Cloud,
   },
   {
@@ -143,6 +143,20 @@ const Navbar3 = () => {
   const [submenu, setSubmenu] = useState<
     "platform" | "usecases" | "developers" | "resources" | null
   >(null);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [open]);
   return (
     <section className="inset-x-0 top-0 z-20 bg-background">
       <div className="container">
@@ -187,7 +201,7 @@ const Navbar3 = () => {
 
             <NavigationMenuList className="hidden lg:flex">
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Platform</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Platform</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex items-start justify-between gap-8 lg:gap-x-12">
                     <NavigationMenuLink
@@ -243,7 +257,7 @@ const Navbar3 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Use cases</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Use cases</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex justify-between gap-8 lg:gap-x-[52px]">
                     <div className="w-1/2 max-w-[510px]">
@@ -300,7 +314,7 @@ const Navbar3 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Developers</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Developers</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex justify-between gap-8 lg:gap-x-12">
                     <div className="w-1/3 max-w-[404px]">
@@ -371,7 +385,7 @@ const Navbar3 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Resources</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex gap-8 lg:gap-12">
                     <div className="flex flex-1 flex-col">
@@ -463,7 +477,7 @@ const Navbar3 = () => {
 
           {/* Mobile Menu (Root) */}
           {open && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
               <div>
                 <button
                   type="button"
@@ -518,7 +532,7 @@ const Navbar3 = () => {
           )}
           {/* Mobile Menu > Platform */}
           {open && submenu === "platform" && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
               <a href="#" className="block space-y-6 px-8 py-8">
                 <div className="w-full overflow-clip rounded-lg">
                   <img
@@ -560,7 +574,7 @@ const Navbar3 = () => {
           )}
           {/* Mobile Menu > Use cases */}
           {open && submenu === "usecases" && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
+            <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
               <div className="px-8 py-3.5 text-xs tracking-widest text-muted-foreground uppercase">
                 Use cases
               </div>
@@ -605,7 +619,7 @@ const Navbar3 = () => {
           )}
           {/* Mobile Menu > Developers */}
           {open && submenu === "developers" && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
+            <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll border-t border-border bg-background lg:hidden">
               <a href="#" className="block space-y-6 px-8 py-8">
                 <div className="w-full overflow-clip rounded-lg">
                   <img
@@ -662,7 +676,7 @@ const Navbar3 = () => {
           )}
           {/* Mobile Menu > Resources */}
           {open && submenu === "resources" && (
-            <div className="fixed inset-0 top-[72px] flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
+            <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
               <div className="px-8 py-3.5 text-xs tracking-widest text-muted-foreground uppercase">
                 Resources
               </div>

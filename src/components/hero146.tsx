@@ -19,10 +19,11 @@ const Hero146 = () => {
         <div className="container pt-12 md:pt-24">
           <div className="flex flex-col items-center gap-5">
             <h1 className="max-w-[25rem] bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-800 bg-clip-text py-2 text-center text-4xl leading-none font-semibold tracking-tight text-transparent md:max-w-[43.75rem] md:text-6xl lg:max-w-[56.25rem] lg:text-[4rem]">
-              L'alternative à ChatGPT pour produire vos contenus à la chaîne.
+              La production de contenu, enfin industrialisée.
             </h1>
             <p className="max-w-[22.5rem] text-center text-base text-muted-foreground md:max-w-[35rem] lg:text-lg">
-              Générez 10, 100, ou 1 000 contenus. Sans prompt. Sans microgestion.
+              Donnez une structure. Brume fait le reste.
+              Un moteur IA complet transforme votre trame en contenus prêts à ranquer.
             </p>
             <div className="pt-6">
               <Button className="block h-fit w-fit animate-shadow-ping rounded-md border border-neutral-950 bg-[linear-gradient(180deg,var(--color-neutral-600),var(--color-neutral-700),var(--color-neutral-900))] px-6 py-3.5 text-center text-lg text-white">
