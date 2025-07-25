@@ -28,52 +28,39 @@ interface Footer7Props {
 
 const defaultSections = [
   {
-    title: "Product",
+    title: "Plateforme",
     links: [
-      { name: "Overview", href: "#" },
-      { name: "Pricing", href: "#" },
-      { name: "Marketplace", href: "#" },
-      { name: "Features", href: "#" },
+      { name: "Tarifs", href: "/pricing" },
+      { name: "Structures", href: "#" },
+      { name: "Agents", href: "#" },
     ],
   },
   {
-    title: "Company",
+    title: "Cas d'usage",
     links: [
-      { name: "About", href: "#" },
-      { name: "Team", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Careers", href: "#" },
+      { name: "E-Commerce", href: "#" },
+      { name: "Glossaires", href: "#" },
+      { name: "Pages locales", href: "#" },
+      { name: "Articles d'actualités", href: "#" },
     ],
   },
   {
-    title: "Resources",
+    title: "A propos",
     links: [
-      { name: "Help", href: "#" },
-      { name: "Sales", href: "#" },
-      { name: "Advertise", href: "#" },
-      { name: "Privacy", href: "#" },
+      { name: "Mentions légales", href: "/mentions-legales" },
+      { name: "Conditions Générales", href: "/conditions-generales-de-service" },
     ],
   },
 ];
 
 const defaultSocialLinks = [
-  { icon: <FaInstagram className="size-5" />, href: "#", label: "Instagram" },
-  { icon: <FaFacebook className="size-5" />, href: "#", label: "Facebook" },
-  { icon: <FaTwitter className="size-5" />, href: "#", label: "Twitter" },
   { icon: <FaLinkedin className="size-5" />, href: "#", label: "LinkedIn" },
-];
-
-const defaultLegalLinks = [
-  { name: "Mentions légales", href: "/mentions-legales" },
-  { name: "Conditions Générales", href: "/conditions-generales-de-service" },
 ];
 
 const Footer7 = ({
   sections = defaultSections,
-  description = "A collection of components for your startup business or side project.",
+  description = "Laissez l'IA rédiger pour vous des contenus parfaitement humains, originaux, optimisés pour le SEO, et qui respectent toujours le ton de votre marque.",
   socialLinks = defaultSocialLinks,
-  copyright = "© 2024 Shadcnblocks.com. All rights reserved.",
-  legalLinks = defaultLegalLinks,
 }: Footer7Props) => {
   return (
     <section className="py-32">
@@ -116,16 +103,6 @@ const Footer7 = ({
               </div>
             ))}
           </div>
-        </div>
-        <div className="text-muted-foreground mt-8 flex flex-col justify-between gap-4 border-t py-8 text-xs font-medium md:flex-row md:items-center md:text-left">
-          <p className="order-2 lg:order-1">{copyright}</p>
-          <ul className="order-1 flex flex-col gap-2 md:order-2 md:flex-row">
-            {legalLinks.map((link, idx) => (
-              <li key={idx} className="hover:text-primary">
-                <a href={link.href}> {link.name}</a>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>

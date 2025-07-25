@@ -1,9 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Hero146 } from "@/components/hero146";
+import LayoutLegal from '../layouts/LayoutLegal.astro';
+import { MentionsLegales } from "@/components/MentionsLegales";
 ---
 
-<Layout title="Welcome to Astro.">
-    <Hero146 client:load />
-    <!-- TODO: Pricing -->
+<Layout title="Mentions légales">
+    <LayoutLegal currentPage="mentions-legales">
+        <MentionsLegales client:load />
+    </LayoutLegal>
 </Layout>

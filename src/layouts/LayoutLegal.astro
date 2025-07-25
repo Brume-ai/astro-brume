@@ -1,0 +1,50 @@
+---
+interface Props {
+    currentPage: 'mentions-legales' | 'conditions-generales-de-service';
+}
+
+const { currentPage } = Astro.props;
+
+const menuItems = [
+    {
+        id: 'mentions-legales',
+        label: 'Mentions légales',
+        href: '/mentions-legales'
+    },
+    {
+        id: 'conditions-generales-de-service',
+        label: 'Conditions générales de service',
+        href: '/conditions-generales-de-service'
+    }
+];
+---
+
+<div class="container">
+    <div class="flex gap-8 lg:max-w-5xl mx-auto py-24">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 flex-shrink-0 hidden lg:block">
+            <div class="sticky top-8">
+                <h2 class="text-lg font-semibold text-gray-900 mb-4">Juridique</h2>
+                <nav class="space-y-2">
+                    {menuItems.map((item) => (
+                        <a
+                            href={item.href}
+                            class={`block text-sm transition-colors ${
+                                currentPage === item.id
+                                    ? 'text-gray-900 font-bold'
+                                    : 'text-gray-600 hover:text-gray-900'
+                            }`}
+                        >
+                            {item.label}
+                        </a>
+                    ))}
+                </nav>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 min-w-0">
+            <slot />
+        </main>
+    </div>
+</div>

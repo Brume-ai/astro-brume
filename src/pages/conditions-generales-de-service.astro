@@ -1,8 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Blogpost6 } from "@/components/blogpost6";
+import LayoutLegal from '../layouts/LayoutLegal.astro';
+import { CGV } from "@/components/CGV";
 ---
 
-<Layout title="Welcome to Astro.">
-    <Blogpost6 />
+<Layout title="Conditions générales de service">
+    <LayoutLegal currentPage="conditions-generales-de-service">
+        <CGV client:load />
+    </LayoutLegal>
 </Layout>

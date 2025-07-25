@@ -25,7 +25,7 @@ const { title } = Astro.props;
     </head>
     <body class="antialiased">
         <Navbar3 client:load />
-        <div class="flex flex-col min-h-screen px-6 sm:px-12">
+        <div class="flex flex-col min-h-screen">
             <div class="flex flex-col w-full mx-auto grow">
                 <main class="grow"><slot /></main>
                 <Footer7 client:visible  />
