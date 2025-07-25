@@ -11,6 +11,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+import thumb from "../assets/thumb-0.webp"
+
 const Hero146 = () => {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   return (
@@ -21,7 +23,7 @@ const Hero146 = () => {
             <h1 className="max-w-[25rem] bg-linear-to-r from-neutral-900 via-neutral-700 to-neutral-800 bg-clip-text py-2 text-center text-4xl leading-none font-semibold tracking-tight text-transparent md:max-w-[43.75rem] md:text-6xl lg:max-w-[56.25rem] lg:text-[4rem]">
               La production de contenu, enfin industrialisée.
             </h1>
-            <p className="max-w-[22.5rem] text-center text-base text-muted-foreground md:max-w-[35rem] lg:text-lg">
+            <p className="font-subtitle max-w-[22.5rem] text-center text-base text-muted-foreground md:max-w-[35rem] lg:text-xl">
               Donnez une structure. Brume fait le reste.
               Un moteur IA complet transforme votre trame en contenus prêts à ranquer.
             </p>
@@ -32,7 +34,7 @@ const Hero146 = () => {
             </div>
           </div>
           <div className="relative mx-auto w-full max-w-[72rem] after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:z-20 after:block after:h-[45%] after:w-full after:bg-linear-to-t after:from-white after:to-transparent after:content-['']">
-            <div className="mt-14 flex w-full flex-col items-center gap-5 rounded-2xl border border-neutral-200 bg-neutral-100 p-3">
+            <div className="mt-14 flex w-full flex-col items-center gap-3 rounded-2xl border border-neutral-200 bg-neutral-100 p-3">
               <p className="text-center text-xs font-medium text-foreground sm:text-sm md:text-lg">
                 Découvrez comment créer une structure de contenu réutilisable en {" "}
                 <span className="underline">5 minutes</span>.
@@ -44,7 +46,7 @@ const Hero146 = () => {
                 >
                   <div>
                     <img
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-aspect-video-1.svg"
+                      src={thumb.src}
                       alt=""
                       className="w-full object-cover object-top-left"
                     />

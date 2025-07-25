@@ -36,11 +36,7 @@ const Feature180 = () => {
               <ul className="flex flex-col gap-8 font-medium text-primary/70">
                 <li className="flex items-start gap-4">
                   <Users className="h-6 shrink-0" />
-                  <p>Générer un contenu à la fois</p>
-                </li>
-                <li className="flex items-start gap-4">
-                  <MessageSquare className="h-6 shrink-0" />
-                  <p>Passer du temps à tout réécrire</p>
+                  <p>Générer un contenu à la fois sur ChatGPT, via une discussion fastidieuse</p>
                 </li>
                 <li className="flex items-start gap-4">
                   <MessageCircleOff className="h-6 shrink-0" />
@@ -49,6 +45,10 @@ const Feature180 = () => {
                 <li className="flex items-start gap-4">
                   <List className="h-6 shrink-0" />
                   <p>Contenu impersonnel</p>
+                </li>
+                <li className="flex items-start gap-4">
+                  <MessageSquare className="h-6 shrink-0" />
+                  <p>Passer du temps à tout corriger</p>
                 </li>
               </ul>
             </div>
@@ -63,19 +63,19 @@ const Feature180 = () => {
                 <ul className="flex flex-col gap-8 font-medium">
                   <li className="flex items-start gap-4">
                     <Target className="h-6 shrink-0" />
-                    <p>Produire des dizaines via une structure</p>
-                  </li>
-                  <li className="flex items-start gap-4">
-                    <Bot className="h-6 shrink-0" />
-                    <p>Générer des textes nets, prêts à publier</p>
+                    <p>Générer des dizaines de contenus, via une structure réutilisable</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <Bell className="h-6 shrink-0" />
-                    <p>Relecture IA intégrée, contenu traçable</p>
+                    <p>Relecture IA intégrée</p>
                   </li>
                   <li className="flex items-start gap-4">
                     <BarChart className="h-6 shrink-0" />
                     <p>Ton de marque intégré</p>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <Bot className="h-6 shrink-0" />
+                    <p>Générer des textes prêts à publier</p>
                   </li>
                 </ul>
               </div>

@@ -12,23 +12,23 @@ interface DataItem {
 
 const DATA: DataItem[] = [
   {
-    title: "Seamless Integrations",
+    title: "Structures réutilisables",
     description:
-      "Connect your favorite tools and services effortlessly for a unified workflow.",
+      "Générez des dizaines de contenus via une structure réutilisable.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg",
     icon: <Zap className="size-6" />,
   },
   {
-    title: "Advanced Analytics",
+    title: "Multi-agents",
     description:
-      "Gain deep insights with powerful analytics to make data-driven decisions.",
+      "La clé d'une qualité supérieure.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg",
     icon: <Pyramid className="size-6" />,
   },
   {
-    title: "Smart Search & Filters",
+    title: "Génération supervisée",
     description:
-      "Find exactly what you need with intelligent search and filtering options.",
+      "Pour vos articles d'actualités et vos contenus ultra-spécifiques.",
     image: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-3.svg",
     icon: <Sparkle className="size-6" />,
   },
@@ -41,16 +41,8 @@ const Feature182 = () => {
         {/* Title and Buttons Section */}
         <div className="text-center">
           <h2 className="mb-6 text-2xl font-semibold sm:mb-9 sm:text-3xl lg:mb-14 lg:text-4xl">
-            Discover Powerful Features
+            Solutions innovantes
           </h2>
-          <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button className="w-full sm:w-auto">
-              Explore Features <ArrowRight className="size-4" />
-            </Button>
-            <Button variant="outline" className="w-full shadow-sm sm:w-auto">
-              Get Started <BadgeCheck className="size-4" />
-            </Button>
-          </div>
         </div>
 
         {/* Feature Cards Section */}

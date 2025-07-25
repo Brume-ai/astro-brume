@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
+import { cn } from "@/lib/utils";
+import { Logo } from "./Logo";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,22 +34,25 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 
+import thumb from "../assets/thumb-0.webp"
+import goodflair from "../assets/goodflair-founders.jpg"
+
 const solutions = [
   {
-    title: "Structures",
-    description: "Vestibulum scelerisque quis nisl ut convallis.",
+    title: "Structures réutilisables",
+    description: "Générez des dizaines de contenus via une structure réutilisable.",
     href: "plateforme/structures",
     icon: Cloud,
   },
   {
-    title: "Another solution",
-    description: "Curabitur vehicula malesuada enim a cursus.",
+    title: "Multi-agents",
+    description: "La clé d'une qualité supérieure.",
     href: "#",
     icon: Lock,
   },
   {
-    title: "And a third solution",
-    description: "Proin aliquam feugiat lobortis.",
+    title: "Génération supervisée",
+    description: "Pour vos articles d'actualités et vos contenus ultra-spécifiques.",
     href: "#",
     icon: Fingerprint,
   },
@@ -55,67 +60,42 @@ const solutions = [
 
 const useCases = [
   {
-    title: "Banking",
+    title: "Catégories E-Commerce",
     href: "#",
     icon: Building2,
   },
   {
-    title: "Healthcare",
+    title: "Glossaires et Définitions",
     href: "#",
     icon: HeartPulse,
   },
   {
-    title: "Technology",
+    title: "Pages locales",
     href: "#",
     icon: Cpu,
   },
   {
-    title: "Education",
+    title: "Articles d'actualités",
     href: "#",
-    icon: GraduationCap,
-  },
-  {
-    title: "Agriculture",
-    href: "#",
-    icon: Leaf,
-  },
-  {
-    title: "BaaS",
-    href: "#",
-    icon: Building,
-  },
-  {
-    title: "Entertainment",
-    href: "#",
-    icon: Film,
-  },
-  {
-    title: "SaaS",
-    href: "#",
-    icon: BarChart,
-  },
-  {
-    title: "Crypto",
-    href: "#",
-    icon: Bitcoin,
+    icon: Cpu,
   },
 ];
 
 const documentationLinks = [
   {
-    title: "External link",
+    title: "Catégories E-Commerce",
     href: "#",
   },
   {
-    title: "External link",
+    title: "Glossaires et Définitions",
     href: "#",
   },
   {
-    title: "External link",
+    title: "Pages locales",
     href: "#",
   },
   {
-    title: "External link",
+    title: "Articles d'actualités",
     href: "#",
   },
 ];
@@ -167,27 +147,16 @@ const Navbar3 = () => {
               {(!open || !submenu) && (
                 <>
                   <a
-                    href="https://www.shadcnblocks.com"
+                    href="/"
                     className="hidden items-center gap-2 lg:flex"
                   >
-                    <img
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
-                    <span className="text-lg font-semibold tracking-tighter">
-                      Brume.ai
-                    </span>
+                    <Logo />
                   </a>
                   <a
-                    href="https://www.shadcnblocks.com"
+                    href="/"
                     className="flex items-center gap-2 lg:hidden"
                   >
-                    <img
-                      src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/shadcnblockscom-icon.svg"
-                      className="max-h-8"
-                      alt="Shadcn UI Navbar"
-                    />
+                    <Logo />
                   </a>
                 </>
               )}
@@ -201,7 +170,7 @@ const Navbar3 = () => {
 
             <NavigationMenuList className="hidden lg:flex">
               <NavigationMenuItem>
-                <NavigationMenuTrigger triggerMode="click">Platform</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Plateforme</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex items-start justify-between gap-8 lg:gap-x-12">
                     <NavigationMenuLink
@@ -211,17 +180,17 @@ const Navbar3 = () => {
                       <div className="overflow-clip rounded-lg border border-input bg-background">
                         <div>
                           <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                            src={thumb.src}
                             alt="Placeholder image"
                             className="h-[190px] w-[398px] object-cover object-center"
                           />
                         </div>
                         <div className="p-5 xl:p-8">
                           <div className="mb-2 text-base">
-                            Platform Overview
+                            Tour d'horizon
                           </div>
                           <div className="text-sm font-normal text-muted-foreground">
-                            Pellentesque nec odio id elit dapibus rutrum.
+                            1 minute pour découvrir Brume.
                           </div>
                         </div>
                       </div>
@@ -257,72 +226,15 @@ const Navbar3 = () => {
                 </NavigationMenuContent>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger triggerMode="click">Use cases</NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
-                  <div className="flex justify-between gap-8 lg:gap-x-[52px]">
-                    <div className="w-1/2 max-w-[510px]">
-                      <div className="mb-6 text-xs tracking-widest text-muted-foreground uppercase">
-                        Use cases
-                      </div>
-                      <div className="grid grid-cols-2 gap-6">
-                        {useCases.map((useCase, index) => (
-                          <NavigationMenuLink
-                            key={index}
-                            href={useCase.href}
-                            className="group flex flex-row items-center gap-5"
-                          >
-                            <div className="group-hover:opacity-60">
-                              <useCase.icon
-                                className="size-4 text-black"
-                                strokeWidth={1}
-                              />
-                            </div>
-                            <div className="text-base">{useCase.title}</div>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </div>
-                    <NavigationMenuLink
-                      href="#"
-                      className="group max-w-[604px] flex-1 p-0 hover:bg-transparent"
-                    >
-                      <div className="flex h-full rounded-lg border border-input bg-background p-0 hover:bg-transparent">
-                        <div className="w-2/5 max-w-[310px] shrink-0 overflow-clip rounded-tl-lg rounded-bl-lg">
-                          <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                            alt="Placeholder image"
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                        <div className="flex flex-col p-5 xl:p-8">
-                          <div className="mb-8 text-xs tracking-widest text-muted-foreground uppercase">
-                            For user persona
-                          </div>
-                          <div className="mt-auto">
-                            <div className="mb-4 text-xl">
-                              Call to action for user persona
-                            </div>
-                            <div className="text-sm font-normal text-muted-foreground">
-                              Etiam ornare venenatis neque, sit amet suscipit
-                              diam pulvinar a.
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </NavigationMenuLink>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger triggerMode="click">Developers</NavigationMenuTrigger>
+                <NavigationMenuTrigger triggerMode="click">Cas d'usage</NavigationMenuTrigger>
                 <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
                   <div className="flex justify-between gap-8 lg:gap-x-12">
                     <div className="w-1/3 max-w-[404px]">
                       <div className="mb-4 text-xs tracking-widest text-muted-foreground uppercase">
-                        Documentation
+                        Cas d'usage
                       </div>
                       <div className="mb-6 text-sm font-normal text-muted-foreground">
-                        Call to action for developers
+                        Exemples concrets prêt à l'emploi
                       </div>
                       <div className="-ml-2.5 space-y-2.5">
                         {documentationLinks.map((documentationLink, index) => (
@@ -345,37 +257,15 @@ const Navbar3 = () => {
                         className="flex flex-row items-center overflow-clip rounded-lg border border-input bg-background p-0 hover:bg-transparent"
                       >
                         <div className="flex-1 p-5 xl:p-8">
-                          <div className="mb-2 text-base">Showcase link</div>
+                          <div className="mb-2 text-base">Goodflair : de 3 à 65k visites organiques / mois</div>
                           <div className="text-sm font-normal text-muted-foreground">
-                            Fusce neque dolor, sollicitudin sed sodales non,
-                            condimentum vel metus.
+                            Une stratégie SEO pragmatique qui porte ses fruits.
                           </div>
                         </div>
                         <div className="h-[154px] max-w-[264px] shrink-0">
                           <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                            alt="Placeholder image"
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink
-                        href="#"
-                        className="flex flex-row items-center overflow-clip rounded-lg border border-input bg-background p-0 hover:bg-transparent"
-                      >
-                        <div className="flex-1 p-5 xl:p-8">
-                          <div className="mb-2 text-base">
-                            Another showcase link
-                          </div>
-                          <div className="text-sm font-normal text-muted-foreground">
-                            Duis metus mauris, efficitur imperdiet magna vitae,
-                            accumsan mattis lacus.
-                          </div>
-                        </div>
-                        <div className="h-[154px] max-w-[264px] shrink-0">
-                          <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                            alt="Placeholder image"
+                            src={goodflair.src}
+                            alt="Fondateurs de Goodflair"
                             className="h-full w-full object-cover object-center"
                           />
                         </div>
@@ -384,75 +274,14 @@ const Navbar3 = () => {
                   </div>
                 </NavigationMenuContent>
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger triggerMode="click">Resources</NavigationMenuTrigger>
-                <NavigationMenuContent className="min-w-[calc(100vw-4rem)] p-8 lg:p-12 2xl:min-w-[calc(1400px-4rem)]">
-                  <div className="flex gap-8 lg:gap-12">
-                    <div className="flex flex-1 flex-col">
-                      <div className="mb-6 text-xs tracking-widest text-muted-foreground uppercase">
-                        Resources
-                      </div>
-                      <div className="grid flex-1 grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                        {resources.map((resource, index) => (
-                          <NavigationMenuLink
-                            key={index}
-                            href={resource.href}
-                            className="flex h-full flex-col overflow-clip rounded-lg border border-input bg-background p-5 hover:bg-accent hover:text-accent-foreground xl:p-8"
-                          >
-                            <div className="mt-auto">
-                              <div className="mb-2 text-base">
-                                {resource.title}
-                              </div>
-                              <div className="text-sm font-normal text-muted-foreground">
-                                {resource.description}
-                              </div>
-                            </div>
-                          </NavigationMenuLink>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="w-1/3 max-w-[404px]">
-                      <div className="mb-6 text-xs tracking-widest text-muted-foreground uppercase">
-                        Customers
-                      </div>
-                      <NavigationMenuLink
-                        href="#"
-                        className="mb-6 flex flex-row overflow-clip rounded-lg border border-input bg-background p-0 hover:bg-transparent"
-                      >
-                        <div className="flex-1 p-5 xl:p-8">
-                          <div className="mb-2 text-base">Customers</div>
-                          <div className="text-sm font-normal text-muted-foreground">
-                            Integer a ipsum quis nisi posuere lobortis at id
-                            tellus.
-                          </div>
-                        </div>
-                        <div className="w-1/3 max-w-[130px] shrink-0">
-                          <img
-                            src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
-                            alt="Placeholder image"
-                            className="h-full w-full object-cover object-center"
-                          />
-                        </div>
-                      </NavigationMenuLink>
-                      <NavigationMenuLink
-                        href="#"
-                        className="flex flex-row items-center gap-3 rounded-lg bg-secondary/30 p-3 hover:bg-secondary/80 focus:bg-secondary/80"
-                      >
-                        <Badge variant="secondary">NEW</Badge>
-                        <span className="text-sm text-ellipsis text-secondary-foreground">
-                          Proin volutpat at felis in vehicula
-                        </span>
-                      </NavigationMenuLink>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+              <NavigationMenuLink href="/pricing">Tarifs</NavigationMenuLink>
             </NavigationMenuList>
             <div className="hidden items-center gap-2 lg:flex">
-              <Button variant="ghost">Login</Button>
-              <Button variant="outline">
-                Start now
-                <ChevronRight className="size-4" />
+              <Button variant="outline" asChild>
+                <a href="https://app.brume.ai">
+                  Mon compte
+                  <ChevronRight className="size-4" />
+                </a>
               </Button>
             </div>
             <div className="flex items-center gap-4 lg:hidden">
@@ -484,7 +313,7 @@ const Navbar3 = () => {
                   className="flex w-full items-center border-b border-border px-8 py-7 text-left"
                   onClick={() => setSubmenu("platform")}
                 >
-                  <span className="flex-1">Platform</span>
+                  <span className="flex-1">Plateforme</span>
                   <span className="shrink-0">
                     <ChevronRight className="size-4" />
                   </span>
@@ -494,7 +323,7 @@ const Navbar3 = () => {
                   className="flex w-full items-center border-b border-border px-8 py-7 text-left"
                   onClick={() => setSubmenu("usecases")}
                 >
-                  <span className="flex-1">Use cases</span>
+                  <span className="flex-1">Cas d'usage</span>
                   <span className="shrink-0">
                     <ChevronRight className="size-4" />
                   </span>
@@ -522,10 +351,10 @@ const Navbar3 = () => {
               </div>
               <div className="mx-[2rem] mt-auto flex flex-col gap-4 py-12">
                 <Button variant="outline" className="relative" size="lg">
-                  Login
+                  Connexion
                 </Button>
                 <Button className="relative" size="lg">
-                  Start now
+                  Créer un compte
                 </Button>
               </div>
             </div>
@@ -576,7 +405,7 @@ const Navbar3 = () => {
           {open && submenu === "usecases" && (
             <div className="fixed inset-0 top-[72px] z-50 flex h-[calc(100vh-72px)] w-full flex-col overflow-scroll bg-background lg:hidden">
               <div className="px-8 py-3.5 text-xs tracking-widest text-muted-foreground uppercase">
-                Use cases
+                Cas d'usage
               </div>
               <div>
                 {useCases.map((useCase, index) => (

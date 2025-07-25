@@ -1,4 +1,8 @@
 import { Separator } from "@/components/ui/separator";
+import jerome from '../assets/jerome.jpg';
+import victor from '../assets/victor.jpg';
+import goodflair from '../assets/logo-goodflair.png';
+import khosi from '../assets/logo-khosi.png';
 
 const Casestudies2 = () => {
   return (
@@ -14,26 +18,25 @@ const Casestudies2 = () => {
           <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
             <div className="flex flex-col gap-10 border-border sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
               <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-1.svg"
+                src={jerome.src}
                 alt="placeholder"
                 className="aspect-29/35 h-full w-full max-w-60 rounded-2xl object-cover"
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <q className="sm:text-xl">
-                  This productivity tool transformed how we collaborate. Our
-                  team's workflow improved dramatically, and we've cut meeting
-                  time by half while increasing output.
+                  Brume est un excellent outil pour générer des contenus d'une grande qualité, faisant économiser un temps précieux à nos équipes de rédacteur.
                 </q>
-                <div className="flex items-end gap-6">
+                <div className="flex items-end justify-between gap-6">
                   <div className="flex flex-col gap-1">
                     <p className="text-lg font-semibold text-primary">
-                      Michael Rivera
+                      Jérôme Brisseau
                     </p>
-                    <p className="text-muted-foreground">Product Director</p>
+                    <p className="text-muted-foreground">CEO & Co-founder</p>
                   </div>
                   <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg"
-                    alt="logo"
+                    src={goodflair.src}
+                    alt="logo Goodflair"
+                    className="h-10"
                   />
                 </div>
               </div>
@@ -41,19 +44,19 @@ const Casestudies2 = () => {
             <div className="flex gap-10 self-center lg:flex-col">
               <div className="flex flex-col gap-2">
                 <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  98%
+                  +20%
                 </p>
                 <p className="font-semibold text-primary">
-                  Customer Satisfaction
+                  de trafic organique
                 </p>
-                <p className="text-muted-foreground">From verified reviews</p>
+                <p className="text-muted-foreground">par mois</p>
               </div>
               <div className="flex flex-col gap-2">
                 <p className="text-4xl font-medium text-primary sm:text-5xl">
-                  3.8x
+                  x10
                 </p>
-                <p className="font-semibold text-primary">ROI Improvement</p>
-                <p className="text-muted-foreground">Within first quarter</p>
+                <p className="font-semibold text-primary">de pages publiées </p>
+                <p className="text-muted-foreground">par mois</p>
               </div>
             </div>
           </div>
@@ -61,26 +64,25 @@ const Casestudies2 = () => {
           <div className="grid gap-16 lg:grid-cols-3 xl:gap-24">
             <div className="flex flex-col gap-10 border-border sm:flex-row lg:col-span-2 lg:border-r lg:pr-16 xl:pr-24">
               <img
-                src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/placeholder-2.svg"
+                src={victor.src}
                 alt="placeholder"
                 className="aspect-29/35 h-full w-full max-w-60 rounded-2xl object-cover"
               />
               <div className="flex h-full flex-col justify-between gap-10">
                 <q className="sm:text-xl">
-                  The interface is intuitive and customizable to our needs. We
-                  implemented it across departments with minimal training and
-                  saw immediate results.
+                  Plateforme très intuitive qui permet de produire des contenus web uniques, de qualité et ultra personnalisés.
                 </q>
-                <div className="flex items-end gap-6">
+                <div className="flex items-end justify-between gap-6">
                   <div className="flex flex-col gap-1">
                     <p className="text-lg font-semibold text-primary">
-                      Sarah Chen
+                      Victor Lerat
                     </p>
-                    <p className="text-muted-foreground">Operations Lead</p>
+                    <p className="text-muted-foreground">Co-fondateur KHUMBU · KHOSI · alfie</p>
                   </div>
                   <img
-                    src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg"
+                    src={khosi.src}
                     alt="logo"
+                    className="h-24"
                   />
                 </div>
               </div>
