@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Hero146 } from "@/components/hero146";
+import RebuyWords from "@/components/RebuyWords";
+---
+
+<Layout title="Brume.ai - Tarifs et Crédits">
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    1 crédit = 1 mot généré
+                </h1>
+                <p class="text-xl text-gray-600 dark:text-gray-300">
+                    Facturation à l'utilisation
+                </p>
+            </div>
+            <RebuyWords client:load />
+        </div>
+    </div>
+</Layout>

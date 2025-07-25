@@ -64,8 +64,8 @@ const defaultSocialLinks = [
 ];
 
 const defaultLegalLinks = [
-  { name: "Terms and Conditions", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "Mentions légales", href: "/mentions-legales" },
+  { name: "Conditions Générales", href: "/conditions-generales-de-service" },
 ];
 
 const Footer7 = ({
